@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "c-ss-ms-gVAE: A Semi-Supervised Multiscale Generalized-VAE Framework for One-Class Classification"
+message: "If you use this software, please cite the accompanying paper below."
+type: software
+# Software / repository maintainer only (GitHub “Cite this repository” software card).
+# Publication authorship for the Neurocomputing paper remains in preferred-citation below.
+authors:
+  - family-names: "Sharma"
+    given-names: "Renuka"
+repository-code: "https://github.com/RenukaSharma/c-ss-ms-gVAE"
+license: MIT
+preferred-citation:
+  type: article
+  title: "A semi-supervised multiscale generalized-VAE framework for one-class classification"
+  authors:
+    - family-names: "Sharma"
+      given-names: "Renuka"
+    - family-names: "Awate"
+      given-names: "Suyash P."
+  journal: "Neurocomputing"
+  year: 2025
+  volume: "620"
+  issue: "129172"
+  doi: "10.1016/j.neucom.2024.129172"
+  url: "https://www.sciencedirect.com/science/article/pii/S092523122401943X"
+references:
+  - type: thesis
+    title: "Anomaly Detection in Images Using One-class and Multi-class Learning Approaches"
+    authors:
+      - family-names: "Sharma"
+        given-names: "Renuka"
+    institution:
+      name: "Monash University and IIT Bombay (IITB-Monash Research Academy)"
+    year: 2022
+    doi: "10.26180/23584503"
+    url: "https://bridges.monash.edu/articles/thesis/Anomaly_Detection_in_Images_Using_One-class_and_Multi-class_Learning_Approaches/23584503"

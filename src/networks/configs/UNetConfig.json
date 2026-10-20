@@ -1,0 +1,6 @@
+{
+    "INCHANNELS": [3,16,32,32,64],
+    "OUTCHANNELS": [16,32,32,64,128],
+    "STOCHASTIC": [false, false, true, true, true], 
+    "SKIPS": [true, true, true, true, false] 
+}
