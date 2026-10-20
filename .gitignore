@@ -63,3 +63,9 @@ data/
 # Local notes — not for public release
 CLEANUP_LOG.md
 HANDOFF*
+
+# Local experiment launchers (old cluster paths). Keep on disk; do not publish.
+/*.sh
+src/run_*.sh
+binary_classifier/run*.sh
+!scripts/run_experiment.sh

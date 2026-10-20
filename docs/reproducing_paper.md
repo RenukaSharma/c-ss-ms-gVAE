@@ -1,6 +1,6 @@
 # Reproducing the Neurocomputing (c-ss-ms-gVAE) experiments
 
-This repository keeps the dataset loaders from the original research tree. Paths in legacy shell scripts and t-SNE plotters may still point at old cluster locations (`/home1/renuka/...`); override them with your local dataset roots. The **active** malaria and BUI loaders now read tensors from `--data_path`.
+This repository keeps the dataset loaders from the original research tree. Point `--data_path` (or `DATA_DIR`) at your local dataset root. The **active** malaria and BUI loaders read tensors from `--data_path`.
 
 ## Environment
 
@@ -38,7 +38,7 @@ The wired loader is `src/datasets/malaria_dataset_patch_with_GGnoise_noveltest.p
 <data_path>/test_label_2p5k.pt
 ```
 
-Older malaria files under `src/datasets/malaria_dataset_*.py` still contain cluster paths and are not used by `load_dataset`.
+Older malaria files under `src/datasets/malaria_dataset_*.py` are not used by `load_dataset`. They resolve tensors via `DATA_DIR` if you run them.
 
 ### Nanofibre (`nanofibre`)
 
@@ -61,11 +61,21 @@ Downloaded by torchvision on first run if `--data_path` is writable.
 
 ### Corrosion and ODDS
 
-Loaders are present. Corrosion tensor paths in `corrosion_patch.py` still use old cluster locations; point them at your files or edit that loader before running.
+Loaders are present. Corrosion tensors are resolved from `DATA_DIR` (for example `train_data_10k.pt`).
 
 ## Training (Deep SAD-style / c-ss-ms-gVAE)
 
-From `src/` (so `PYTHONPATH` includes the package roots as in the original layout):
+Use the generalized runner (no machine-specific paths):
+
+```bash
+export DATA_DIR=$HOME/data/mvtec          # your local dataset root
+export RESULTS_DIR=$HOME/results/c-ss-ms-gvae
+./scripts/run_experiment.sh mvtec mvtec_net --category carpet
+./scripts/run_experiment.sh --sweep malaria_dataset cifar10_LeNet \
+    --ratios 0,0.01,0.05,0.1,0.2 --seeds 0,1,2 --ablations A
+```
+
+Or from `src/` (Click requires `<xp_dir>` to exist):
 
 ```bash
 python main.py mvtec mvtec_net <xp_dir> <data_path> --category carpet [options...]
@@ -73,8 +83,6 @@ python main.py malaria_dataset cifar10_LeNet <xp_dir> <data_path> [options...]
 python main.py nanofibre cifar10_LeNet <xp_dir> <data_path> [options...]
 python main.py bui_dataset cifar10_LeNet <xp_dir> <data_path> [options...]
 ```
-
-Create `<xp_dir>` before running (Click requires it to exist).
 
 `--ablation_type {A,B,C,C_a,D,E,F,VAE,test,DeepSAD}` selects the loss configurations reported in the paper. `A` is the full proposed model.
 
@@ -92,4 +100,4 @@ See `binary_classifier/` and `binary_classifier/baseline_binary_classifier.py`.
 
 ## t-SNE and visualization scripts
 
-Files such as `src/tsne_plotter_*.py` still have hardcoded `/home1/renuka/...` paths. Edit those paths, or treat them as one-off plotting notebooks, before re-running.
+Plotters read `DATA_DIR` and `RESULTS_DIR` from the environment. Set those to your local folders before running `src/tsne_plotter_*.py`.

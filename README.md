@@ -69,7 +69,13 @@ MVTec carpet t-SNE panels from the paper are in [`docs/figures/tsne/`](docs/figu
 
 ## Quick start
 
-See [`docs/reproducing_paper.md`](docs/reproducing_paper.md) for environment setup, data layout, and example commands.
+```bash
+export DATA_DIR=$HOME/data/mvtec
+export RESULTS_DIR=$HOME/results/c-ss-ms-gvae
+./scripts/run_experiment.sh mvtec mvtec_net --category carpet
+```
+
+See [`docs/reproducing_paper.md`](docs/reproducing_paper.md) for environment setup, data layout, and more commands. The many `run_*.sh` files in this working tree are local-only (gitignored) and are not published.
 
 ## Place in the PhD thesis
 
