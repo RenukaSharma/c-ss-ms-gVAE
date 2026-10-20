@@ -29,9 +29,7 @@ Supporting code lives under `src/` (DeepSAD-style training, SSAD hybrid baseline
 
 ## Results (your figures)
 
-Figures below use **only** files in [`docs/figures/`](docs/figures/) from **this** project (thesis Ch. 5 / Neurocomputing exports). **Do not** copy plots from the ss-gVAE or c-ss-gVAE repos. Save or rename your PNGs to match the paths in the `<img>` tags, or edit those paths to match the filenames you already use.
-
-Until those files exist on `main`, GitHub may show broken image icons for missing PNGs.
+Figures below are the Neurocomputing paper plots (from the Elsevier TeX `pics/` folder), stored in [`docs/figures/`](docs/figures/). They are **not** copied from the ss-gVAE or c-ss-gVAE repositories.
 
 ### Method overview
 
@@ -39,7 +37,7 @@ Until those files exist on `main`, GitHub may show broken image icons for missin
   <img src="docs/figures/architecture.png" alt="c-ss-ms-gVAE method figure" width="92%">
 </p>
 
-> **Figure 1.** *Replace this caption* after you add `docs/figures/architecture.png`.
+> **Figure 1.** Semi-supervised multiscale generalized-VAE (c-ss-ms-gVAE) framework for one-class classification. From the Neurocomputing paper.
 
 ### MVTec, malaria, nanofibre, breast ultrasound
 
@@ -66,6 +64,8 @@ Until those files exist on `main`, GitHub may show broken image icons for missin
   &nbsp;
   <img src="docs/figures/bui_ablation.png" alt="Breast ultrasound ablations" width="46%">
 </p>
+
+MVTec carpet t-SNE panels from the paper are in [`docs/figures/tsne/`](docs/figures/tsne/).
 
 ## Quick start
 
